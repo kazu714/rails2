@@ -1,0 +1,11 @@
+<%= form_with model: @post, local: true do |f|%>
+<%= f.text_field :name %>
+<%= f.number_field :page_id, value: @page.id, style: 'display:none'%>
+<%= f.submit %>
+<%end%>
+
+<% @posts.each do |post|%>
+<%= post.name %>
+<%= link_to "削除", "posts/#{post.id}", method: :delete%>
+<br>
+<%end%>

@@ -1,0 +1,12 @@
+index<br>
+
+<%= form_with model: @page, local: true do |f|%>
+<%= f.text_field :title %>
+<%= f.submit %>
+<%end%>
+
+
+<% @pages.each do |page| %>
+    <%= link_to page.title, "pages/#{page.id}" %>
+    <%= link_to "削除", "pages/#{page.id}", method: :delete%><br>
+<%end%>
